@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<link rel="stylesheet" href="css/cart.css" />
+		<link rel="stylesheet" href="css/reset.css" />
+		<title>Document</title>
+	</head>
+
+	<body>
+		<div class="top">
+			<div class="bot_main">
+				<div class="wrapper">
+					<ul class="first_right">
+						<li>
+							<a href="#">嗡，欢迎来到乐蜂，&nbsp;</a>
+							<a href="#" class="f10">156********</a>
+
+						</li>
+						<li><span>|</span></li>
+						<li>
+							<a href="#" class="f10">退出登录</a>
+						</li>
+						<li>
+							<a href="#" class="bot_left">我的订单
+								<i></i></a>
+
+						</li>
+						<li>
+							<a href="#" class="bot_left">快速导航
+								<i></i></a>
+
+						</li>
+
+						<li>
+							<a href="#">收藏乐蜂</a>
+						</li>
+						<li>
+
+							<a href="#" class="bot_right f10"><i></i>手机乐蜂</a>
+						</li>
+
+					</ul>
+				</div>
+			</div>
+			<div class="cart_main">
+				<div class="cart-logo">
+					<a href="#"></a>
+				</div>
+			</div>
+		</div>
+		<div class="main">
+			<div class="cart_t">
+				<i></i> 请在
+				<b>10分00秒</b> 内提交订单，下单后您另有30分钟的支付时间。
+			</div>
+			<div class="cart-x">
+				<div class="tit">
+					<table>
+						<tr>
+							<th class="td01">商品信息</th>
+							<th class="td02">单价</th>
+							<th class="td03">数量</th>
+							<th class="td04">小计</th>
+							<th class="td05">操作</th>
+						</tr>
+					</table>
+				</div>
+				<!-- 中间商品数据由js拼接出来 -->
+				<div class="catr_list">
+					<table>
+						<tr>
+							<td class="td01">
+							<div class="pic">
+								<a href="#"><img src="img/cart_shop.jpg" width="58" height="74"></a>
+							</div>
+						  <div class="fr">
+						  	<div class="name">
+						  	<a href="#">丝蕴Syoss 无硅水润润发乳750ml 护发素</a>
+						  	</div>
+						  	<div class="size">
+						  		规格:750ml
+						  	</div>
+						  </div>
+						  </td>
+						     <td class="td02">
+						     	<span class="m-price">
+						     		<span class="u-yen">¥</span>
+						     		<strong class="u-price">39</strong>
+						     	</span>
+						        <del class="mar_price">
+						        		<span class="u-yen">¥</span>
+						     		<strong class="u-price">115</strong>
+						        </del>
+						     </td>
+						     <td class="td03">
+						     	<div class="quantity">
+						     		<a href="#" class="l-y">-</a>
+						     		<input type="text" />
+						     		<a href="#" class="r-y">+</a>
+						     	</div>
+						     </td>
+						     <td class="td04">
+						     	<span class="my_price">
+						     		<span class="u-yen">¥</span>
+						     		<strong class="u-price">115</strong>
+						     	</span>
+						     </td>
+						     <td class="td05">
+						     	<a href="#">删除</a>
+						     </td>
+						</tr>
+					</table>
+				</div>
+			<div class="orders">
+					<p style=""><span class="u-y">运费</span>
+						全场满99包邮
+					</p>
+				</div>
+			</div>
+
+			<div class="cart-j">
+				<div class="sykj">
+					<a href="#">使用卡券<i class="down"></i> </a>
+					已成功使用<b>0</b>张卡券 <input type="button" style="display:none;" value="取消使用" id="cancelUse"></div>
+				<div class="cart-m" style="display:none;" id="couponUpDownDiv">
+					<div class="cart-m-t">
+						<label>激活新卡劵:</label>
+						<span>优惠券（含代金券）</span>
+						<input id="couponSn" name="couponSn" type="text" class="num" value="请输入激活码" />
+						<input id="couponSnBtn" name="couponSnBtn" type="button" class="but" value="激活" />
+						<div class="cart-m-t-error" style="display:none;">您输入的激活码有误</div>
+					</div>
+					<img src="//h5rsc.vipstatic.com/lefeng_pc/images/page/cart-min3.png" style="visibility: hidden;position:absolute; top:0;left:0">
+					<div class="cart-m-b">
+						<div class="tit">
+							<ul id="page_nav">
+								<li class="cur">全场券(<b>0</b>)</li>
+								<li>专场券(<b>0</b>)</li>
+							</ul>
+							<p>"专场券"和"全场券"不能同时使用。</p>
+						</div>
+						<div class="main">
+							<p>注：多个专场可使用多张，同一个专场只可使用1张。</p>
+							<!--专场卷-->
+							<div id="cycle">
+								<table id="book7_1" width="100%">
+								</table>
+								<!--全场卷-->
+								<table style="display:none" width="100%" id="book7_2">
+								</table>
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="cart-b">
+					<ul id="amount_cart">
+						<ul id="totalPayPrice">
+						<li>
+							<label class="fl">
+								共<b>2</b>件商品  商品金额
+							</label>
+							<span class="fr">
+								<span class="u-yen">¥</span>
+						     		<strong class="u-price">39</strong>
+							</span>
+						</li>
+					</ul>
+					</ul>
+				</div>
+				<div class="cart-b cart-bt">
+					<ul id="totalPayPrice">
+						<li class="ov-pre">
+							<label class="fl">
+								总金额
+							</label>
+							<span class="fr">
+								<span class="u-yen">¥</span>
+						     		<strong class="u-price">39</strong>
+							</span>
+						</li>
+						</ul>
+				</div>
+				<div class="cart-js">
+					<div class="fl">
+						<a href="http://www.lefeng.com">继续购物</a>
+						<a href="#"></a>
+					</div>
+					<div class="fr">
+						<span id="cleanCart" style="display:none;"> 
+                    结算时间已过，购物车被清空了~重新
+                    <input name="" type="button" value="挑选商品" class="txsp" />
+                </span>
+						<input name="" type="button" value="立即结算" class="pre" id="settlement" />
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+	</body>
+
+</html>

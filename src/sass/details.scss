@@ -1,0 +1,716 @@
+@charset "utf-8"; //设置中文字符
+//1.Sass-变量定义
+//变量：必须是$符号开头，后面紧跟变量名，变量名称和变量值之间要使用冒号:进行分隔
+//普通变量：变量都是属性值.
+//特殊变量：一般情况下，我们定义的变量都是属性值，可以直接使用，但是如果变量作为属性或者其他的特殊情况下，必须使用#{$variable}的形式进行调用。
+//变量的使用场景
+//变量可以参与任意的加减乘除运算。
+$tbg-width:100%;
+$tbg-height:100px;
+$wrapper-width:1000px;
+body {
+    font-size: 12px;
+    color: #666;
+    background: #f5f5f5;
+}
+
+a {
+    text-decoration: none;
+}
+
+.wrapper {
+    width: $wrapper-width;
+    margin: 0 auto;
+    position: relative;
+}
+
+
+/*顶部start---------------------------------------------*/
+
+.top {
+    width: $tbg-width;
+    height: 30px;
+    .bot_main {
+        background: #f2f2f2;
+        height: 30px;
+        line-height: 30px;
+        font-size: 14px;
+    }
+    .wrapper {
+        overflow: hidden;
+        width: $wrapper-width;
+        margin: 0 auto;
+        position: relative;
+        .first_left {
+            float: left;
+        }
+        .first_right {
+            float: right;
+            margin-left: 250px;
+            li {
+                float: left;
+            }
+        }
+    }
+}
+
+.first_left {
+    padding-left: 10px;
+    .top_left {
+        padding: 0 10px;
+        color: #F52648;
+        font-weight: bold;
+        position: relative;
+        i {
+            display: inline-block;
+            background: url(../img/jnt2.png) no-repeat -96px 0;
+            width: 8px;
+            height: 4px;
+            position: absolute;
+            top: 8px;
+            right: -10px;
+        }
+    }
+}
+
+.first_right {
+    .bot_left {
+        position: relative;
+        i {
+            display: inline-block;
+            background: url(../img/jnt2.png) no-repeat -96px 0;
+            width: 8px;
+            height: 4px;
+            position: absolute;
+            top: 8px;
+            right: -10px;
+        }
+    }
+}
+
+.first_right {
+    .bot_right {
+        position: relative;
+        i {
+            display: inline-block;
+            background: url(../img/jnt.png) no-repeat -540px -258px;
+            width: 18px;
+            height: 16px;
+            position: absolute;
+            top: 4px;
+            left: -16px;
+        }
+    }
+    li {
+        margin: 0 20px 0 0;
+        a {
+            color: #666;
+        }
+        .f10 {
+            color: #F52648;
+        }
+    }
+}
+
+
+/*顶部end----------------------------------------------------*/
+
+
+/*头部start---------------------------------------------------*/
+
+.header {
+    height: 130px;
+    .logo {
+        width: 170px;
+        height: 88px;
+        background: transparent url(../img/logo.png) no-repeat;
+        position: absolute;
+        left: 0;
+        top: 5px;
+    }
+    .search {
+        display: inline;
+        width: 400px;
+        height: 58px;
+        margin: 31px 0 0 300px;
+        float: left;
+        .search_input {
+            background: url(../img/jnt2.png) no-repeat 0 -443px;
+            margin-top: 5px;
+            position: relative;
+            width: 400px;
+            height: 40px;
+            strong {
+                position: absolute;
+                right: 0;
+                top: 0;
+                width: 72px;
+                height: 40px;
+                cursor: pointer;
+                color: #fff;
+                font-size: 15px;
+                line-height: 40px;
+                text-align: center;
+            }
+            input {
+                float: left;
+                width: 298px;
+                height: 27px;
+                padding: 6px 10px 5px 17px;
+                line-height: 27px;
+                border: none;
+                background: none;
+                color: #666;
+                font-size: 14px;
+                outline: 0 none;
+            }
+            p {
+                line-height: 33px;
+                color: #999;
+                text-indent: 1em;
+                width: 360px;
+                float: left;
+                a {
+                    color: #ff0056;
+                    margin: 0 5px 0 0;
+                    line-height: 33px;
+                }
+            }
+        }
+    }
+    .shop_catr {
+        float: left;
+        .shop_catr_right {
+            position: absolute;
+            right: 0;
+            top: 38px;
+            .shop_catr_btn {
+                width: 136px;
+                height: 42px;
+                background: url(../img/jnt2.png) 0 -112px;
+                cursor: pointer;
+                position: relative;
+                strong {
+                    font-size: 14px;
+                    font-weight: bold;
+                    color: #fff;
+                    position: relative;
+                    width: 30px;
+                    left: 108px;
+                    top: 13px;
+                }
+            }
+        }
+    }
+}
+
+
+/*头部end---------------------------------------------------*/
+
+
+/*导航start---------------------------------------------------*/
+
+.nav {
+    background: url(../img/nav.png) repeat-x bottom #fff;
+    .wrapper .menu_btn {
+        width: 220px;
+        height: 40px;
+        display: inline-block;
+        background: #d62340;
+        line-height: 40px;
+        text-align: center;
+        color: #fff;
+        font-size: 14px;
+        font-weight: bold;
+        a {
+            color: #fff;
+            cursor: default;
+        }
+        i {
+            display: inline-block;
+            width: 10px;
+            height: 6px;
+            background: url(../img/jnt3.png) no-repeat 0 0;
+            vertical-align: middle;
+            margin-left: 5px;
+            transform: rotate(180deg);
+            transition: transform .2s;
+        }
+    }
+    .menu_btn2 {
+        height: 40px;
+        display: inline;
+        a {
+            width: 200px;
+            height: 40px;
+            line-height: 40px;
+            display: inline-block;
+            position: relative;
+            color: #fff;
+            font-weight: bold;
+            text-align: center;
+            font-size: 14px;
+            margin-right: 12px;
+        }
+    }
+    .menu_btn3 {
+        float: right;
+        a {
+            display: inline-block;
+            width: 23px;
+            height: 25px;
+            margin: 7px;
+            background: url(../img/jnt2.png) no-repeat;
+        }
+        .icon_1 {
+            background-position: -96px -13px !important;
+        }
+        .icon_2 {
+            background-position: -119px -13px !important;
+        }
+        .icon_3 {
+            background-position: -142px -13px !important;
+        }
+    }
+}
+
+
+/*导航end-------------------------------------------------------*/
+
+section {
+    width: 1002px;
+    margin: 0 auto 20px;
+    overflow: hidden;
+    .top {
+        line-height: 60px;
+        color: red;
+        text-indent: 0;
+        font-size: 13px;
+        height: 60px;
+        b {
+            a {
+                color: #999;
+                font-size: 13px;
+                font-style: normal;
+            }
+            color: #999;
+            font-size: 13px;
+            font-style: normal;
+            i {
+                width: 5px;
+                height: 8px;
+                margin: 0 5px;
+                background: url(../img/jnt2.png) no-repeat -121px 0;
+                display: inline-block;
+            }
+        }
+    }
+    .bot {
+        width: 1000px;
+        height: 516px;
+        margin-bottom: 15px;
+        position: relative;
+        background: #fff;
+        .bot_box {
+            width: 1000px;
+            dl {
+                dd {
+                    background: #fff;
+                    overflow: hidden;
+                    .dity-brand-logo {
+                        display: inline-block;
+                        width: 240px;
+                    }
+                    img {
+                        margin: 0;
+                        height: 48px;
+                        margin-top: 10px;
+                    }
+                    h1 {
+                        width: 600px;
+                        font-size: 20px;
+                        font-weight: bold;
+                        padding: 20px 0 0 29px;
+                        color: #333;
+                        overflow: hidden;
+                        height: 33px;
+                        i {
+                            font-style: normal;
+                            color: #F52648;
+                        }
+                    }
+                    p {
+                        width: 600px;
+                        height: 54px;
+                        line-height: 25px;
+                        font-size: 16px;
+                        padding: 0 0 0 29px;
+                        color: #999;
+                        overflow: hidden;
+                    }
+                }
+          
+                .dity-brand-time {
+                    position: absolute;
+                    right: 30px;
+                    top: 25px;
+                    text-align: right;
+                    .dity-brand-logo {
+                        display: inline-block;
+                        width: 240px;
+                    }
+                }
+                dt {
+                    position: relative;
+                    width: 1000px;
+                    .dity-pic {
+                        position: relative;
+                        height: 347px;
+                        width: 600px;
+                        border: solid 1px #eee;
+                        margin-left: 29px;
+                        img {
+                            display: block;
+                            max-width: 600px;
+                            max-height: 347px;
+                            margin: 0 auto;
+                        }
+                    }
+                    .dity-tags {
+                        position: relative;
+                        left: 0;
+                        top: 20px;
+                        padding-left: 29px;
+                        display: inline-block;
+                        width: 500px;
+                        span {
+                            height: 22px;
+                            padding: 0 10px;
+                            line-height: 22px;
+                            text-align: center;
+                            margin-right: 10px;
+                            display: inline-block;
+                            border: 1px solid #ccc;
+                            border-radius: 12px;
+                        }
+                    }
+                    .dity-share {
+                        position: absolute;
+                        right: 10px;
+                        bottom: -40px;
+                        line-height: 27px;
+                        overflow: visible;
+                        .share {
+                            float: right;
+                            span {
+                                display: none;
+                            }
+                            i {
+                                display: inline-block;
+                                background: url(../img/share.png) no-repeat -179px -382px;
+                                width: 14px;
+                                height: 16px;
+                                vertical-align: -2px;
+                            }
+                        }
+                    }
+                    .dity {
+                        position: absolute;
+                        top: 0;
+                        left: 660px;
+                        width: 310px;
+                        height: 380px;
+                        border-top: dotted 1px #ccc;
+                        .dity-price-c {
+                            margin-top: 20px;
+                            background-position: 0 0;
+                            height: 55px;
+                            position: relative;
+                            .dity-title {
+                                display: inline-block;
+                                width: 70px;
+                                font-size: 13px;
+                                line-height: 25px;
+                            }
+                            .lighten {
+                                font-size: 12px;
+                                color: red;
+                            }
+                            strong {
+                                font-size: 32px;
+                                padding-left: 5px;
+                                color: red;
+                            }
+                            .dity-countdown {
+                                display: inline-block;
+                                color: #fff;
+                                font-size: 12px;
+                                padding: 1px 3px;
+                                margin-left: 10px;
+                                vertical-align: super;
+                                background: red;
+                            }
+                            .marketPrice-s {
+                                color: #999;
+                                font-size: 13px;
+                                text-decoration: line-through;
+                                margin-left: 20px;
+                            }
+                            .dity-title {
+                                display: inline-block;
+                                width: 70px;
+                                font-size: 13px;
+                                line-height: 25px;
+                            }
+                        }
+                        .dity-promotions {
+                            overflow: hidden;
+                            padding-bottom: 20px;
+                            .dity-title {
+                                display: inline-block;
+                                width: 70px;
+                                font-size: 13px;
+                                line-height: 25px;
+                            }
+                        }
+                        .dity-prts {
+                            float: right;
+                            width: 240px;
+                            margin-bottom: 20px;
+                            .dity-promotion {
+                                height: 27px;
+                                line-height: 27px;
+                                color: #666;
+                                float: left;
+                                width: 100%;
+                                font-size: 12px;
+                                overflow: hidden;
+                                margin-bottom: 3px;
+                                i {
+                                    display: inline-block;
+                                    width: 39px;
+                                    margin: 0 10px 0 5px;
+                                    vertical-align: middle;
+                                    font-style: normal;
+                                    color: #fff;
+                                    height: 23px;
+                                    background: url(../img/mianyou.png);
+                                }
+                                .l4 {
+                                    background-position: -117px 0;
+                                }
+                            }
+                        }
+                        .dity-size {
+                            width: 310px;
+                            padding: 25px 0 10px 0;
+                            border-top: dotted 1px #ccc;
+                            li {
+                                float: left;
+                            }
+                            .dity-size-l {
+                                width: 60px;
+                                line-height: 25px;
+                                font-size: 13px;
+                            }
+                            .dity-size-r {
+                                width: 103px;
+                                height: 25px;
+                                margin-left: 15px;
+                                background: url(../img/add.png) no-repeat -204px -181px;
+                                .dity-m {
+                                    display: inline-block;
+                                    height: 25px;
+                                    width: 25px;
+                                    border: none 0;
+                                    cursor: pointer;
+                                    vertical-align: middle;
+                                }
+                                .dity-input {
+                                    width: 34px;
+                                    height: 20px;
+                                    border: 0 none;
+                                    padding: 0 5px;
+                                    text-align: center;
+                                    vertical-align: middle;
+                                    display: inline-block;
+                                    position: relative;
+                                    top: -4px;
+                                }
+                                .dity-p {
+                                    display: inline-block;
+                                    height: 25px;
+                                    width: 25px;
+                                    border: none 0;
+                                    cursor: pointer;
+                                    vertical-align: middle;
+                                }
+                            }
+                        }
+                        .add-to-cart-pro {
+                            width: 176px;
+                            height: 45px;
+                            display: block;
+                            background: url(../img/add.png) no-repeat -145px 0;
+                            margin-top: 30px;
+                            color: #fff;
+                            line-height: 45px;
+                            text-align: center;
+                            font-size: 16px;
+                        }
+                        span {
+                            color: #666;
+                            font-size: 13px;
+                            display: inline-block;
+                            margin-top: 10px;
+                            b {
+                                color: red;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/*尾部strat-----------------------------------------------------*/
+
+.footer {
+    background: #fff;
+    overflow: hidden;
+    .foot_service {
+        ul {
+            height: 138px;
+            border-bottom: 1px dotted #c1c1c1;
+            li {
+                display: inline-block;
+                height: 79px;
+                width: 215px;
+                margin: 30px auto;
+                margin-left: 107px;
+                background: url(../img/jnt2.png) no-repeat;
+            }
+            .li_1 {
+                background-position: 0 -197px;
+            }
+            .li_2 {
+                background-position: 0 -278px;
+            }
+            .li_3 {
+                background-position: 0 -359px;
+            }
+        }
+    }
+    .foo_info {
+        height: 250px;
+        border-bottom: 1px dotted #C1C1C1;
+        .info {
+            height: 250px;
+            border-bottom: 1px dotted #C1C1C1;
+            width: 1000px;
+            margin: 0 auto;
+            overflow: hidden;
+            dt {
+                float: left;
+                width: 216px;
+                padding: 30px 30px 0 0;
+                strong {
+                    display: block;
+                    width: 174px;
+                    height: 112px;
+                    background: url(../img/jnt.png) no-repeat -315px -259px;
+                    margin-top: 10px;
+                }
+                em {
+                    color: #666;
+                    font-style: initial;
+                    text-indent: 8px;
+                    display: block;
+                }
+            }
+            dd {
+                padding-right: 80px;
+                float: left;
+                padding: 20px 65px 0 0;
+                strong {
+                    display: block;
+                    font-size: 16px;
+                    line-height: 80px;
+                    font-weight: normal;
+                }
+                a {
+                    display: block;
+                    line-height: 22px;
+                    color: #666;
+                }
+            }
+            .lf_wx {
+                padding-right: 0;
+                margin-left: 35px;
+                width: 90px;
+                float: left;
+                padding: 20px 65px 0 0;
+                b {
+                    display: block;
+                    width: 77px;
+                    height: 77px;
+                    border: 1px solid #ccc;
+                    background: url(../img/jnt.png) no-repeat -229px -368px;
+                    padding: 4px;
+                }
+            }
+        }
+    }
+    .footer_end {
+        width: 1000px;
+        margin: 31px auto 0px auto;
+        line-height: 22px;
+        text-align: center;
+        overflow: hidden;
+        color: #999;
+        .footer_end_top {
+            margin-bottom: 20px;
+            a {
+                padding: 0 20px 0 0;
+                padding-right: 70px;
+                color: #000;
+            }
+        }
+        .footer_end_bot {
+            margin: 10px 0;
+        }
+        .footer_img {
+            clear: both;
+            padding: 10px 0 20px;
+            a {
+                margin-right: 20px;
+                display: inline-block;
+                width: 110px;
+                overflow: hidden;
+                height: 40px;
+            }
+            .li1 {
+                height: 36px;
+                background: url(../img/li1.jpg) no-repeat;
+            }
+            .li2 {
+                height: 36px;
+                background: url(../img/li2.png) no-repeat;
+            }
+            .li3 {
+                height: 36px;
+                background: url(../img/li3.png) no-repeat;
+            }
+            .li4 {
+                height: 36px;
+                background: url(../img/jnt.png)-194px -277px no-repeat;
+            }
+            .li5 {
+                height: 36px;
+                background: url(../img/jnt.png)-194px -315px no-repeat;
+            }
+        }
+    }
+}

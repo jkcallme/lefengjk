@@ -1,0 +1,402 @@
+@charset "utf-8"; //设置中文字符
+//1.Sass-变量定义
+//变量：必须是$符号开头，后面紧跟变量名，变量名称和变量值之间要使用冒号:进行分隔
+//普通变量：变量都是属性值.
+//特殊变量：一般情况下，我们定义的变量都是属性值，可以直接使用，但是如果变量作为属性或者其他的特殊情况下，必须使用#{$variable}的形式进行调用。
+//变量的使用场景
+//变量可以参与任意的加减乘除运算。
+$tbg-width:100%;
+$tbg-height:100px;
+$wrapper-width:1000px;
+body {
+ background: url(../img/login-bk.jpg) no-repeat center top #fbe1d3;
+ font-size: 12px;
+}
+body,html{
+    height: 100%;
+    width: 100%;
+    }
+a {
+    text-decoration: none;
+    color: #999;
+}
+.wrapper {
+        width: $wrapper-width;
+        margin: 0 auto;
+        position: relative;
+    }
+/*顶部start---------------------------------------------*/
+.top {
+    width: $tbg-width;
+    height: $tbg-height;
+    .top_main {
+        background: url(../img/bg4.jpg) no-repeat;
+        width: $tbg-width;
+        height: 67px;
+    }
+    .bot_main {
+        background: #f2f2f2;
+        height: 30px;
+        line-height: 30px;
+        font-size: 14px;
+    }
+    .wrapper {
+        width: $wrapper-width;
+        margin: 0 auto;
+        position: relative;
+        .first_left {
+            float: left;
+        }
+        .first_right {
+            float: right;
+            li {
+                float: left;
+            }
+        }
+    }
+}
+
+.first_left {
+    .top_left {
+        padding: 0 10px;
+        color: #F52648;
+        font-weight: bold;
+        position: relative;
+        i {
+            display: inline-block;
+            background: url(../img/jnt2.png) no-repeat -96px 0;
+            width: 8px;
+            height: 4px;
+            position: absolute;
+            top: 8px;
+            right: -10px;
+        }
+    }
+}
+
+.first_right {
+    .bot_left {
+        position: relative;
+        i {
+            display: inline-block;
+            background: url(../img/jnt2.png) no-repeat -96px 0;
+            width: 8px;
+            height: 4px;
+            position: absolute;
+            top: 8px;
+            right: -10px;
+        }
+    }
+}
+
+.first_right {
+    .bot_right {
+        position: relative;
+        i {
+            display: inline-block;
+            background: url(../img/jnt.png) no-repeat -540px -258px;
+            width: 18px;
+            height: 16px;
+            position: absolute;
+            top: 4px;
+            left: -16px;
+        }
+    }
+    li {
+        margin: 0 20px 0 0;
+        padding: 0 0 0 10px;
+        a {
+            color: #666;
+        }
+        .f10 {
+            color: #F52648;
+        }
+    }
+}
+/*顶部end----------------------------------------------------*/
+.logo{
+    height: 100px;
+    width: 100%;
+    .logo_bot{
+        width: 1000px;
+        margin: 0 auto;
+        a{
+            display: block;
+            width: 170px;
+            height: 90px;
+            background: url(../img/new-logo.png) no-repeat;
+            color: #666;
+        }
+    }
+}
+
+.login_form{
+    min-height: 500px;
+    height: auto;
+    position: relative;
+    width: 100%;
+    .wrap{
+        width: 960px;
+        margin: 0 auto;
+       
+        .form_content{
+            float: right;
+            width: 420px;
+            position: relative;
+            border-radius: 8px;
+            box-shadow: #ccc 0px 0px 5px;
+            background: #fff;
+            margin-bottom: 60px;
+        .form_content_title{
+            height: auto;
+            min-height: 40px;
+            padding: 25px 60px 0 60px;
+            margin-bottom: 20px;
+            span{
+                display: block;
+                color: rgb(51,51,51);
+                font-size: 14px;
+              
+            }
+            .lc1{
+             
+               width: 100px;
+               height: 36px;
+               float: left;
+               background: url(../img/form.jpg) no-repeat;
+               background-position: 0 -158px;
+            }
+            .lc2{
+                float: right;
+                background: none;
+                a{
+                    color: #02b1cb;
+                }
+            }
+        }
+        .form_content_input{
+            padding: 0 60px;
+            position: relative;
+            margin-top: 35px;
+            li{
+                position: relative;
+                height: 85px;
+                width: 300px;
+            }
+              h2{
+                  font-weight: 500;
+                  line-height: 24px;
+              }
+              input{
+                  background: #fff;
+                  color: #999;
+                  width: 278px;
+                     height: 33px;
+                     border: 1px solid #ccc;
+                     font-size: 12px;
+                     font-weight: bold;
+                     color: #666;
+                     padding: 0 10px;
+                     outline: none;
+                 
+              }
+              .list2 input{
+                  width:125px;
+              }
+              .list2 span{
+                  display: inline-block;
+                  vertical-align: top;
+                  height: 42px;
+                  a{
+                      height: 40px;
+                      color: #a0a0a0;
+                      text-decoration: underline;
+                      display: inline-block;
+                      margin-left: 4px;
+                      vertical-align: top;
+                  }
+              }
+             .list3 input{
+                 width: 125px;
+                 height: 38px;
+             }
+              .list3 span{
+                  display: inline-block;
+                  vertical-align: top;
+                  height: 42px;
+                  input{
+                      border: 1px solid #ff7c91;
+                      background: #ffaebb;
+                      color: #fff;
+                      border-radius: 5px;
+                  }
+              }
+              .list5 a{
+                width: 300px;
+                height: 40px;
+                display: block;
+                text-align: center;
+                font-weight: bold;
+                font-size: 14px;
+                line-height: 38px;
+                color: #fff;
+                word-spacing: 8px;
+                letter-spacing: 1px;
+                background:url(../img/login-icon5.jpg) no-repeat 0px -262px;
+            }
+            .list6 a{
+                color: #999;
+                line-height: 26px;
+                display: block;
+                float: left;
+            }
+              
+        }
+        
+    }
+}
+}
+.footer{
+    background: #fff;
+    overflow: hidden;
+    width: 100%;
+    padding: 30px;
+    .foot_service{
+        ul{
+            height: 138px;
+            border-bottom: 1px dotted #c1c1c1;
+            li{
+                display: inline-block;
+                height: 79px;
+                width: 215px;
+                margin: 30px auto;
+                margin-left: 107px;
+                background: url(../img/jnt2.png) no-repeat;
+            }
+            .li_1{
+                background-position: 0 -197px;
+            }
+            .li_2{
+                background-position: 0 -278px;
+            }
+            .li_3{
+                background-position: 0 -359px;
+            }
+        }
+      }
+    .foo_info{
+        height: 250px;
+        border-bottom:1px dotted #C1C1C1;
+        .info{
+            height: 250px;
+             border-bottom:1px dotted #C1C1C1;
+             width: 1000px;
+             margin: 0 auto;
+             overflow: hidden;
+             dt{
+                 float: left;
+                 width: 216px;
+                 padding: 30px 30px 0 0;
+                 strong{
+                 display: block;
+                 width: 174px;
+                 height: 112px;
+                 background: url(../img/jnt.png) no-repeat -315px -259px;
+                 margin-top: 10px;
+
+             }
+             em{
+                 color: #666;
+                 font-style: initial;
+                 text-indent: 8px;
+                 display: block;
+             }
+             }
+             dd{
+              
+                 padding-right: 80px;
+                 float: left;
+                 padding: 20px 65px 0 0;
+                 strong{
+                     display: block;
+                     font-size: 16px;
+                     line-height: 80px;
+                     font-weight: normal;
+                 }
+                 a{
+                     display: block;
+                     line-height: 22px;
+                     color: #666;
+                 }
+             }
+             .lf_wx{
+                 padding-right: 0;
+                 margin-left: 35px;
+                 width: 90px;
+                 float: left;
+                 padding: 20px 65px 0 0;
+                 b{
+                     display: block;
+                     width: 77px;
+                     height: 77px;
+                     border: 1px solid #ccc;
+                     background:url(../img/jnt.png) no-repeat -229px -368px;
+                     padding: 4px;
+                 }
+             }
+             
+        }
+        
+    }
+   .footer_end{
+       width: 1000px;
+       margin: 31px auto 0px auto;
+       line-height: 22px;
+       text-align: center;
+       overflow: hidden;
+       color: #999;
+       .footer_end_top{
+           margin-bottom: 20px;
+           a{
+               padding: 0 20px 0 0;
+               padding-right: 70px;
+               color: #000;
+           }
+       }
+       .footer_end_bot{
+           margin: 10px 0;
+       }
+       .footer_img{
+           clear: both;
+           padding: 10px 0 20px;
+           a{
+            margin-right: 20px;
+            display: inline-block;
+            width: 110px;
+            overflow: hidden;
+            height: 40px;
+               
+           }
+           .li1{
+               height: 36px;
+               background: url(../img/li1.jpg) no-repeat;
+           }
+           .li2{
+               height: 36px;
+               background: url(../img/li2.png) no-repeat;
+           }
+           .li3{
+               height: 36px;
+               background: url(../img/li3.png) no-repeat;
+           }
+           .li4{
+               height: 36px;
+               background: url(../img/jnt.png)-194px -277px no-repeat;
+           }
+           .li5{
+               height: 36px;
+               background: url(../img/jnt.png)-194px -315px  no-repeat;
+           }
+       }
+   }
+    }
