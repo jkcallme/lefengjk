@@ -5,7 +5,8 @@ body {
   background: #f5f5f5;
 }
 
-html, body {
+html,
+body {
   width: 100%;
   height: auto;
 }
@@ -372,6 +373,7 @@ header {
   font-size: 14px;
   font-weight: bold;
   float: left;
+  position: relative;
 }
 .nav .wrapper .menu_btn a {
   color: #fff;
@@ -430,27 +432,27 @@ header {
 
 /*导航end-------------------------------------------------------*/
 /*轮播图start-----------------------------------------------------*/
-.section_1 {
-  height: 360px;
-  position: relative;
-  width: 100%;
-}
-.section_1 .banner {
+#banner {
   height: 360px;
   width: 100%;
   position: relative;
+  overflow: hidden;
 }
-.section_1 .banner .banner1 {
+#banner ul {
+  height: 360px;
+  overflow: hidden;
+}
+#banner ul .banner1 {
   height: 360px;
   width: 100%;
-  background: url(../img/banner1.jpg) center center no-repeat;
+  background: url(../img/banner6.jpg) center center no-repeat;
   position: absolute;
   left: 0;
   top: 0;
   opacity: 0;
-  display: none;
+  display: block;
 }
-.section_1 .banner .banner2 {
+#banner ul .banner2 {
   height: 360px;
   width: 100%;
   background: url(../img/banner2.jpg) center center no-repeat;
@@ -458,9 +460,9 @@ header {
   left: 0;
   top: 0;
   opacity: 0;
-  display: none;
+  display: block;
 }
-.section_1 .banner .banner3 {
+#banner ul .banner3 {
   height: 360px;
   width: 100%;
   background: url(../img/banner3.jpg) center center no-repeat;
@@ -468,9 +470,9 @@ header {
   left: 0;
   top: 0;
   opacity: 0;
-  display: none;
+  display: block;
 }
-.section_1 .banner .banner4 {
+#banner ul .banner4 {
   height: 360px;
   width: 100%;
   background: url(../img/banner5.jpg) center center no-repeat;
@@ -478,26 +480,29 @@ header {
   left: 0;
   top: 0;
   opacity: 0;
-  display: none;
+  display: block;
 }
-.section_1 .banner .banner5 {
+#banner ul .banner5 {
   height: 360px;
   width: 100%;
-  background: url(../img/banner6.jpg) center center no-repeat;
+  background: url(../img/banner1.jpg) center center no-repeat;
   position: absolute;
   left: 0;
   top: 0;
-  opacity: 1;
+  opacity: 0;
   display: block;
 }
-.section_1 .circle {
+#banner ul li {
+  float: left;
+}
+#banner .circle {
   position: absolute;
   left: 50%;
   padding-left: 367px;
   bottom: 3px;
   z-index: 12;
 }
-.section_1 .circle li a {
+#banner .circle li {
   float: left;
   width: 14px;
   height: 14px;
@@ -505,29 +510,47 @@ header {
   background: #333;
   cursor: pointer;
 }
-.section_1 .circle li .hot {
+#banner .circle .active {
   background: red;
 }
-.section_1 .float-list {
-  background: #02B1CB;
+#banner #left,
+#banner #right {
+  position: absolute;
+  color: #fff;
+  text-decoration: none;
+  font-size: 100px;
+  top: 50%;
+  margin-top: -50px;
+  display: none;
+}
+#banner #left {
+  left: 20px;
+}
+#banner #right {
+  right: 20px;
+}
+
+.float-list {
   position: absolute;
   width: 220px;
-  left: 448px;
-  top: 0;
+  left: 50%;
+  top: 270px;
   height: 360px !important;
   opacity: 1 !important;
-  background: #f7f7f7;
+  background: #F2F2F2;
   box-shadow: 0 0 7px #ccc;
   transition: height .2s, box-shadow .2s, opacity .2s;
+  z-index: 1000;
+  margin-left: -504px;
 }
-.section_1 .float-list dl {
+.float-list dl {
   position: relative;
   float: left;
   z-index: 105;
   clear: both;
   width: 100%;
 }
-.section_1 .float-list dl dt {
+.float-list dl dt {
   display: inline;
   position: relative;
   float: left;
@@ -539,7 +562,7 @@ header {
   height: 96px;
   border-bottom: 1px solid #eee;
 }
-.section_1 .float-list dl dt strong {
+.float-list dl dt strong {
   float: left;
   width: 100%;
   display: block;
@@ -553,13 +576,13 @@ header {
   font-weight: bold;
   font-family: "microsoft yahei";
 }
-.section_1 .float-list dl dt p {
+.float-list dl dt p {
   clear: both;
   height: 72px;
   padding: 0 0 0 5px;
   line-height: 24px;
 }
-.section_1 .float-list dl dt p a {
+.float-list dl dt p a {
   padding: 0 6px 0 0;
   width: 30%;
   color: #666;
@@ -572,11 +595,11 @@ header {
   font-family: "microsoft yahei";
   line-height: 32px;
 }
-.section_1 .float-list dl dt p a:hover {
+.float-list dl dt p a a:hover {
   color: #F52648;
 }
-.section_1 .float-list dl dd {
-  display: block;
+.float-list dd {
+  display: none;
   position: absolute;
   top: 0px;
   left: 220px;
@@ -586,7 +609,7 @@ header {
   width: 692px;
   padding: 0 0 20px;
 }
-.section_1 .float-list dl dd ul {
+.float-list dd ul {
   display: inline;
   float: left;
   width: 316px;
@@ -594,30 +617,30 @@ header {
   line-height: 24px;
   overflow: hidden;
 }
-.section_1 .float-list dl dd ul li {
+.float-list dd ul li {
   margin: 0 0 5px;
   display: inline-block;
 }
-.section_1 .float-list dl dd ul li strong {
+.float-list dd ul li strong {
   width: 70px;
   display: inline-block;
   margin: 0 0 7px;
   float: left;
 }
-.section_1 .float-list dl dd ul li strong a {
+.float-list dd ul li strong a {
   color: #000;
   font-size: 13px;
   font-weight: bold;
   line-height: 33px;
 }
-.section_1 .float-list dl dd ul li .float-list-cont {
+.float-list dd ul li .float-list-cont {
   display: inline-block;
   width: 240px;
   border-bottom: 1px #ccc dotted;
   float: left;
   padding: 4px 0 6px 0;
 }
-.section_1 .float-list dl dd ul li .float-list-cont a {
+.float-list dd ul li .float-list-cont a {
   margin: 0 14px 0 0;
   line-height: 25px;
   display: inline-block;
@@ -625,8 +648,9 @@ header {
   font-size: 13px;
   color: #999;
 }
-.section_1 .float-list .class-more-btn,
-.section_1 .float-list .class-more-tips {
+
+.class-more-btn,
+.class-more-tips {
   width: 100%;
   transition: height .2s;
   height: 33px;
@@ -637,18 +661,20 @@ header {
   font-size: 12px;
   text-align: center;
 }
-.section_1 .float-list .class-more-btn i,
-.section_1 .float-list .class-more-tips i {
+.class-more-btn i,
+.class-more-tips i {
   width: 23px;
   height: 13px;
   display: inline-block;
   margin-top: 10px;
   background: url(../img/tip_.png);
 }
-.section_1 #webf3 {
+
+#webf3 {
   background: #F7F7F7;
 }
-.section_1 #webf4 {
+
+#webf4 {
   background: #F7F7F7;
 }
 
@@ -876,7 +902,7 @@ header {
   display: none;
   position: fixed;
   right: 50%;
-  top: 1000px;
+  top: 30%;
   z-index: 999;
   margin-right: 510px;
 }

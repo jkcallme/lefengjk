@@ -1,23 +1,28 @@
 <!DOCTYPE html>
 <html lang="zh">
-<head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-	<title>Document</title>
-	<link rel="stylesheet" href="css/reset.css" />
-	<link rel="stylesheet" href="css/registor.css" />
-</head>
-<body>
-	<div class="top">
-			
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Document</title>
+		<link rel="stylesheet" href="css/reset.css" />
+		<link rel="stylesheet" href="css/registor.css" />
+		<style>
+			.err{
+				color:red;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="top">
+
 			<div class="bot_main">
 				<div class="wrapper">
-					
+
 					<ul class="first_right">
-						
-						
-						
+
 						<li>
 							<a href="#" class="bot_left">乐蜂首页
 							</a>
@@ -48,93 +53,103 @@
 		</div>
 		<div class="login_form">
 			<div class="wrap">
-				<form>
+				<form id="form" action="http://10.31.162.27:8087/lfjk/php/reg.php" method="post">
 					<div class="form_content">
 						<div class="form_content_title">
 							<span class="lc1"></span>
-							<span class="lc2"><a href="login.html">登录</a></span>
+							<span class="lc2"><a href="#">登录</a></span>
 						</div>
 						<ul class="form_content_input">
 							<li class="list1">
 								<h2>手机号码</h2>
-								<input type="text" />
+								<input type="text" name="tel" />
 								<div class="yz_dibu" style="color: #999;">请输入手机号</div>
 							</li>
-							<li class="list2">
+							<!--<li class="list2">
 								<h2>验证码</h2>
-								<input type="text" />
+								<input type="text" name="yzm" />
 								<span><a href="#">
 									<img src="img/yzm.png" height="40px" width="85px" />
 								</a>
 								<a href="#">看不清?<br>换一张</a>
 								</span>
 								<div class="yz_dibu" style="color: #999;">请输入图形验证码</div>
-							</li>
-							<li class="list3">
+							</li>-->
+							<!--<li class="list3">
 								<h2>短信验证码</h2>
-								<input type="text" class="yzm" />
+								<input type="text" class="yzm" name="dxyzm" />
 								<span>
 									<input type="button" value="获取短信验证码" />
 								</span>
 								<div class="yz_dibu" style="color: #999;">验证码已发送</div>
+							</li>-->
+							<li class="list4">
+								<h2>账号</h2>
+								<input type="text" name="username" id="username" />
+								<div class="yz_dibu" style="color: #999;">8-20位字符，推荐字母、数字和符号组合的用户名</div>
 							</li>
 							<li class="list4">
 								<h2>密码</h2>
-								<input type="password" />
+								<input type="password" name="password" id="password" />
 								<div class="yz_dibu" style="color: #999;">8-20位字符，推荐字母、数字和符号组合的密码</div>
 							</li>
 							<li class="list4">
 								<h2>确认密码</h2>
-								<input type="password" />
+								<input type="password" id="repass" />
 								<div class="yz_dibu" style="color: #999;">请再次输入密码</div>
 							</li>
-							
+
 							<li class="list5">
-								<a href="#">登录协议并注册</a>
+								<a href="#"><input type="submit" name="submit" value="登录协议并注册"style="background:#eb203e ; border: none; color: #fff; cursor: pointer;"/></a>
 							</li>
 							<li class="list6">
 								<a href="#">《乐蜂网用户协议》 </a>
-							</li>	
+							</li>
 						</ul>
 					</div>
 				</form>
 			</div>
 		</div>
 		<div class="footer">
-		<div class="footer_end wrapper">
-		<div class="footer_end_top">
-			<a>关于乐蜂</a>
-			<a>免责声明</a> 
-			<a>隐私声明</a>
-			<a>版权声明</a>
-			<a>招聘信息</a>
-			<a>联系我们</a>
-			<a>帮助中心</a> 
-			<a>友情链接</a> 
-		</div> 
-		<span>Copyright <b>©</b> 2008-2016 Lefeng.com All Rights Reserved.</span>
-		<span>天津品简电子商务有限公司</span> 
-		<a>津ICP备15005555号-1</a>
-		&nbsp;&nbsp;
-		<img style="display: inline-block; width: 15px; height: 15px; padding-right: 2px;" src="http://h5rsc.vipstatic.com/lefeng_pc/images/beian.png">
-		<span>京公网安备11010502034938号</span> 
-		<a>营业执照</a>
-		<div class="footer_end_bot"> <span>公司全称：天津品简电子商务有限公司  </span> &nbsp; &nbsp;
-			<span>
-			  公司固话：400 000 1818   </span> 
-			  &nbsp; &nbsp; <span> 
-			  	  公司地址：天津市武清区京津电子商务产业园宏瑞道18号</span> 
-		</div>
-		<div class="footer_img">
-			<a class="li1"></a> 
-			<a class="li2"></a>
-			<a class="li3"></a>
-			<a class="li4"></a>
-			<a class="li5"></a>
-		</div>
-		</div>
-	
-	</div>
+			<div class="footer_end wrapper">
+				<div class="footer_end_top">
+					<a>关于乐蜂</a>
+					<a>免责声明</a>
+					<a>隐私声明</a>
+					<a>版权声明</a>
+					<a>招聘信息</a>
+					<a>联系我们</a>
+					<a>帮助中心</a>
+					<a>友情链接</a>
+				</div>
+				<span>Copyright <b>©</b> 2008-2016 Lefeng.com All Rights Reserved.</span>
+				<span>天津品简电子商务有限公司</span>
+				<a>津ICP备15005555号-1</a>
+				&nbsp;&nbsp;
+				<img style="display: inline-block; width: 15px; height: 15px; padding-right: 2px;" src="http://h5rsc.vipstatic.com/lefeng_pc/images/beian.png">
+				<span>京公网安备11010502034938号</span>
+				<a>营业执照</a>
+				<div class="footer_end_bot"> <span>公司全称：天津品简电子商务有限公司  </span> &nbsp; &nbsp;
+					<span>
+			  公司固话：400 000 1818   </span> &nbsp; &nbsp; <span> 
+			  	  公司地址：天津市武清区京津电子商务产业园宏瑞道18号</span>
+				</div>
+				<div class="footer_img">
+					<a class="li1"></a>
+					<a class="li2"></a>
+					<a class="li3"></a>
+					<a class="li4"></a>
+					<a class="li5"></a>
+				</div>
+			</div>
 
-</body>
+		</div>
+                    <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+					<script src="http://www.softwhy.com/demo/jQuery/js/jquery.validate.js"></script>
+					<script src="http://www.softwhy.com/demo/jQuery/js/messages_zh.js"></script>
+					<script>
+						
+					</script>
+	</body>
+
 </html>

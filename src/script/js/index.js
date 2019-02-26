@@ -1,28 +1,10 @@
 (function() {
 	//1.楼梯效果
-	$(window).on('scroll', function() {
-		var $top = $(window).scrollTop();
-		var $louti = $('.section_7');
-		if($top >= 350) {
-			$louti.show();
-		} else {
-			$louti.hide();
-		}
-	});
 
-	$('.section_7 span').on('click', function() {
-		console.log($('.louceng').offset());
-	
-	});
-	
 	//2.获取数据
 
-
-	
 	//懒加载
-			
-	
-	
+  
 
 	//二级菜单
 	$('.top_left').hover(function() {
@@ -90,6 +72,5 @@
 		$(this).hide();
 		$('.class-more-tips').show();
 	});
-
 
 })()

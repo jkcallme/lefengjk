@@ -194,7 +194,7 @@
 										<li class="dity-size-x"><b id="buyNum_tip"></b></li>
 									</ol>
 								</div>
-								<a id="qianggou" href="cart.html" class="joinCar ldb1">
+								<a id="qianggou" href="#" class="joinCar ldb1">
 									<b class="add-to-cart-pro ">加入购物车</b>
 								</a>
 								<span class="pollen-text" title="花粉可在乐蜂APP抵现金使用哦">
@@ -283,6 +283,7 @@
 		</div>
 		<script type="text/javascript" src="script/thirdplugins/jquery-1.11.3.js" ></script>
 		<script type="text/javascript" src="script/thirdplugins/jquery.zoom.js" ></script>
+		<script type="text/javascript" src="script/thirdplugins/cookie.js" ></script>
 		</script>
 		<script>
 			var $sid=location.search.substring(1).split('=')[1];
@@ -299,7 +300,9 @@
 				$('.dity-price-c').find('strong').html(data.price);
 				$('.dity-countdown').html(data.dazhe+'折');
 				$('.marketPrice-s').html('¥'+data.old_price);
-			});		
+			});	
+			
+			//放大镜
 			$('#zoom').zoom({
 				target: '#target',
 				onZoomIn: function() {
@@ -309,6 +312,29 @@
 					$('#target').css('visibility', 'hidden');
 				}
 			});
+			//点击加入购物车
+			
+			var sidarr=[];//编号
+			var numarr=[];//商品数量
+			if(getcookie('cooksid')&& getcookie('cookienum')){
+				sidarr=getcookie('cooksid').split(',');
+				numarr=getcookie('cookienum').split(',');
+			}
+			
+			$('.joinCar b').on('click',function(){
+				if($.inArray($sid,sidarr)==-1){
+					sidarr.push($sid);
+					numarr.push($('#dity-input').val());
+					addcookie('cooksid',sidarr.toString(),7);
+					addcookie('cookienum',numarr.toString(),7);
+				}else{
+					var newnum=parseInt($('#dity-input').val())+parseInt(numarr[$.inArray($sid,sidarr)]);
+					numarr[$.inArray($sid,sidarr)]=newnum;
+					addcookie('cookienum',numarr.toString(),7);
+				}
+			});
+			
+			
 		</script>
 	</body>
 

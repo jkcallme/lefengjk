@@ -1,23 +1,28 @@
 <!DOCTYPE html>
 <html lang="zh">
-<head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-	<title>Document</title>
-	<link rel="stylesheet" href="css/reset.css" />
-	<link rel="stylesheet" href="css/login.css" />
-</head>
-<body>
-	<div class="top">
-			
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Document</title>
+		<link rel="stylesheet" href="css/reset.css" />
+		<link rel="stylesheet" href="css/login.css" />
+		<style>
+			.success {
+				color: green;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="top">
+
 			<div class="bot_main">
 				<div class="wrapper">
-					
+
 					<ul class="first_right">
-						
-						
-						
+
 						<li>
 							<a href="#" class="bot_left">乐蜂首页
 							</a>
@@ -48,7 +53,7 @@
 		</div>
 		<div class="login_form">
 			<div class="wrap">
-				<form>
+				<form id="form1">
 					<div class="form_content">
 						<div class="form_content_title">
 							<span class="lc1"></span>
@@ -57,16 +62,18 @@
 						<ul class="form_content_input">
 							<li class="li1">
 								<h2>账号</h2>
-								<input type="text" />
+								<input type="text" name="username" />
 								<div class="yz_dibu" style="color: #999;">请输入账号</div>
 							</li>
 							<li class="li2">
 								<h2>密码</h2>
-								<div class="password_tips"><a href="#">忘记密码?</a></div>
-								<input type="password" />
+								<div class="password_tips">
+									<a href="#">忘记密码?</a>
+								</div>
+								<input type="password" name="password" />
 								<div class="yz_dibu" style="color: #999;">请输入密码</div>
 							</li>
-							<li class="li3">
+							<!--<li class="li3">
 								<h2>验证码</h2>
 								<input type="text" class="yzm" />
 								<span>
@@ -75,11 +82,10 @@
 								</span>
 								<div class="yz_dibu" style="color: #999;">请输入验证码</div>
 							</li>
-							
-								
-						
+							-->
+
 							<li class="li5">
-								<a href="#">登录</a>
+								<a href="#"><input type="button" value="登录" name="submit" style="background:#eb203e ; border: none; color: #fff; cursor: pointer;" class="login" /></a>
 							</li>
 							<li class="li6">
 								<p>合作网站账号登录</p>
@@ -96,47 +102,99 @@
 									</a>
 								</span>
 							</li>
-								
+
 						</ul>
 					</div>
 				</form>
 			</div>
 		</div>
 		<div class="footer">
-		<div class="footer_end wrapper">
-		<div class="footer_end_top">
-			<a>关于乐蜂</a>
-			<a>免责声明</a> 
-			<a>隐私声明</a>
-			<a>版权声明</a>
-			<a>招聘信息</a>
-			<a>联系我们</a>
-			<a>帮助中心</a> 
-			<a>友情链接</a> 
-		</div> 
-		<span>Copyright <b>©</b> 2008-2016 Lefeng.com All Rights Reserved.</span>
-		<span>天津品简电子商务有限公司</span> 
-		<a>津ICP备15005555号-1</a>
-		&nbsp;&nbsp;
-		<img style="display: inline-block; width: 15px; height: 15px; padding-right: 2px;" src="http://h5rsc.vipstatic.com/lefeng_pc/images/beian.png">
-		<span>京公网安备11010502034938号</span> 
-		<a>营业执照</a>
-		<div class="footer_end_bot"> <span>公司全称：天津品简电子商务有限公司  </span> &nbsp; &nbsp;
-			<span>
-			  公司固话：400 000 1818   </span> 
-			  &nbsp; &nbsp; <span> 
-			  	  公司地址：天津市武清区京津电子商务产业园宏瑞道18号</span> 
-		</div>
-		<div class="footer_img">
-			<a class="li1"></a> 
-			<a class="li2"></a>
-			<a class="li3"></a>
-			<a class="li4"></a>
-			<a class="li5"></a>
-		</div>
-		</div>
-	
-	</div>
+			<div class="footer_end wrapper">
+				<div class="footer_end_top">
+					<a>关于乐蜂</a>
+					<a>免责声明</a>
+					<a>隐私声明</a>
+					<a>版权声明</a>
+					<a>招聘信息</a>
+					<a>联系我们</a>
+					<a>帮助中心</a>
+					<a>友情链接</a>
+				</div>
+				<span>Copyright <b>©</b> 2008-2016 Lefeng.com All Rights Reserved.</span>
+				<span>天津品简电子商务有限公司</span>
+				<a>津ICP备15005555号-1</a>
+				&nbsp;&nbsp;
+				<img style="display: inline-block; width: 15px; height: 15px; padding-right: 2px;" src="http://h5rsc.vipstatic.com/lefeng_pc/images/beian.png">
+				<span>京公网安备11010502034938号</span>
+				<a>营业执照</a>
+				<div class="footer_end_bot"> <span>公司全称：天津品简电子商务有限公司  </span> &nbsp; &nbsp;
+					<span>
+			  公司固话：400 000 1818   </span> &nbsp; &nbsp; <span> 
+			  	  公司地址：天津市武清区京津电子商务产业园宏瑞道18号</span>
+				</div>
+				<div class="footer_img">
+					<a class="li1"></a>
+					<a class="li2"></a>
+					<a class="li3"></a>
+					<a class="li4"></a>
+					<a class="li5"></a>
+				</div>
+			</div>
 
-</body>
+		</div>
+
+	</body>
+	<script type="text/javascript" src="script/thirdplugins/ajaxfn.js"></script>
+	<script type="text/javascript" src="script/thirdplugins/cookie.js"></script>
+	<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+	<script src="http://www.softwhy.com/demo/jQuery/js/jquery.validate.js"></script>
+	<script src="http://www.softwhy.com/demo/jQuery/js/messages_zh.js"></script>
+	<script>
+!function() {
+			var aInput = document.querySelectorAll('input');
+			aInput[2].onclick = function() {
+				ajax({
+					type: 'post',
+					url: 'http://10.31.162.27:8087/lfjk/php/login.php',
+					data: {
+						username: aInput[0].value,
+						password: aInput[1].value
+					},
+					success: function(d) {
+						location.href = 'http://10.31.162.27:8087/lfjk/src/index.html';
+						addcookie('name', aInput[0].value, 7);
+					}
+
+				})
+			}
+		}();
+		
+		$(document).ready(function() {
+				$("#form1").validate({
+					success: function(succ, element) {
+						if(element.name == "username") {
+							succ.text("你的名字真好听").addClass("success");
+						} else if(element.name == "password") {
+							succ.text("你的密码真安全").addClass("success");
+						} else {
+							succ.text("邮箱是正确的").addClass("success");
+						}
+					},
+					rules: {
+						username: "required",
+						password: "required",
+						email: "required"
+					},
+					messages: {
+						name: "用户名是必填项目",
+						password: "密码是必填项目",
+						email: {
+							required: "邮箱是必填项目",
+							email: "邮箱格式不正确"
+						}
+					}
+				});
+			});
+	</script>
+
 </html>
