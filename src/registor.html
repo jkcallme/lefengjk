@@ -3,15 +3,23 @@
 
 	<head>
 		<meta charset="UTF-8" />
+		<meta name="keywords" content="乐蜂网,乐蜂,化妆品网站,商品特卖,特卖网,特卖">
+		<meta name="description" content="乐蜂网全新开启美妆特卖，每天10点上新！主营化妆品、保健品、服装配饰等品类，放心购物，45天无条件退换货！同时还是国内一家拥有众多签约美容专家、明星达人并提供全面女性时尚解决方案的女性时尚生活互动网站。">
+		<link rel="icon" href="http://www.lefeng.com/favicon.ico" type="image/x-icon" //>
+		<title>乐蜂网-美妆特卖_每日10点上新_品牌甄选!</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 		<title>Document</title>
 		<link rel="stylesheet" href="css/reset.css" />
 		<link rel="stylesheet" href="css/registor.css" />
 		<style>
-			.err{
-				color:red;
+		label {
+				color: green;
+				position: absolute;
+				top: 37px;
+				right: -44px;
 			}
+		}
 		</style>
 	</head>
 
@@ -62,7 +70,7 @@
 						<ul class="form_content_input">
 							<li class="list1">
 								<h2>手机号码</h2>
-								<input type="text" name="tel" />
+								<input type="text" name="tel" id="tel" style="width: 200px;" />
 								<div class="yz_dibu" style="color: #999;">请输入手机号</div>
 							</li>
 							<!--<li class="list2">
@@ -85,22 +93,22 @@
 							</li>-->
 							<li class="list4">
 								<h2>账号</h2>
-								<input type="text" name="username" id="username" />
+								<input type="text" name="username" id="username" style="width: 200px;" />
 								<div class="yz_dibu" style="color: #999;">8-20位字符，推荐字母、数字和符号组合的用户名</div>
 							</li>
 							<li class="list4">
 								<h2>密码</h2>
-								<input type="password" name="password" id="password" />
+								<input type="password" name="password" id="password" style="width: 200px;" />
 								<div class="yz_dibu" style="color: #999;">8-20位字符，推荐字母、数字和符号组合的密码</div>
 							</li>
 							<li class="list4">
 								<h2>确认密码</h2>
-								<input type="password" id="repass" />
+								<input type="password" id="repass" style="width: 200px;" />
 								<div class="yz_dibu" style="color: #999;">请再次输入密码</div>
 							</li>
 
 							<li class="list5">
-								<a href="#"><input type="submit" name="submit" value="登录协议并注册"style="background:#eb203e ; border: none; color: #fff; cursor: pointer;"/></a>
+								<input type="submit" name="submit" id="submit" value="登录协议并注册" style="background:#eb203e ; border: none; color: #fff; cursor: pointer;" />
 							</li>
 							<li class="list6">
 								<a href="#">《乐蜂网用户协议》 </a>
@@ -144,12 +152,70 @@
 			</div>
 
 		</div>
-                    <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
-					<script src="http://www.softwhy.com/demo/jQuery/js/jquery.validate.js"></script>
-					<script src="http://www.softwhy.com/demo/jQuery/js/messages_zh.js"></script>
-					<script>
-						
-					</script>
+		<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+		<script src="http://www.softwhy.com/demo/jQuery/js/jquery.validate.js"></script>
+		<script src="http://www.softwhy.com/demo/jQuery/js/messages_zh.js"></script>
+		<script>
+			$(function() {
+				$('#form').validate({
+					rules: {
+						username: {
+							required: true,
+							minlength: 8,
+							maxlength: 20,
+							remote: {
+								type:'post',
+								url: 'http://10.31.162.27:8087/lfjk/php/reg.php'
+							}
+						},
+						password: {
+							required: true,
+							minlength: 8,
+							maxlength: 20,
+							
+						},
+						repass: {
+							required: true,
+							equalTo: '#password'
+						},
+						tel: {
+							required: true,
+							minlength: 11
+						}
+
+					},
+					messages: {
+						username: {
+							required: '<em class="err">用户名不能为空</em>',
+							minlength: '用户名不能小于8',
+							maxlength: '用户名不能大于20',
+							remote: '<em class="err">用户名已存在</em>'
+						},
+						password: {
+							required: '<em class="err">密码不能为空</em>',
+							minlength: '密码不能小于8位'
+						},
+						repass: {
+							required: '密码重复不能为空',
+							equalTo: '密码不匹配'
+						},
+						tel: {
+							required: '手机号不能为空',
+							tel: '你输入的格式有误'
+						}
+					}
+
+				});
+			});
+
+			$.validator.setDefaults({
+				//添加校验成功后的执行函数--修改提示内容，并为正确提示信息添加新的样式(默认是valid)
+				success: function(input) {
+					input.append('<img src="signed-right-icon.png">');
+				}
+
+			});
+		</script>
 	</body>
 
 </html>

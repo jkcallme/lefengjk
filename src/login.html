@@ -3,6 +3,10 @@
 
 	<head>
 		<meta charset="UTF-8" />
+    <meta name="keywords" content="乐蜂网,乐蜂,化妆品网站,商品特卖,特卖网,特卖">
+    <meta name="description" content="乐蜂网全新开启美妆特卖，每天10点上新！主营化妆品、保健品、服装配饰等品类，放心购物，45天无条件退换货！同时还是国内一家拥有众多签约美容专家、明星达人并提供全面女性时尚解决方案的女性时尚生活互动网站。">
+		<link rel="icon" href="http://www.lefeng.com/favicon.ico" type="image/x-icon"//>
+		<title>乐蜂网-美妆特卖_每日10点上新_品牌甄选!</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 		<title>Document</title>
@@ -63,7 +67,7 @@
 							<li class="li1">
 								<h2>账号</h2>
 								<input type="text" name="username" />
-								<div class="yz_dibu" style="color: #999;">请输入账号</div>
+							<!--	<div class="yz_dibu" style="color: #999;">请输入账号</div>-->
 							</li>
 							<li class="li2">
 								<h2>密码</h2>
@@ -71,7 +75,7 @@
 									<a href="#">忘记密码?</a>
 								</div>
 								<input type="password" name="password" />
-								<div class="yz_dibu" style="color: #999;">请输入密码</div>
+							<!--	<div class="yz_dibu" style="color: #999;">请输入密码</div>-->
 							</li>
 							<!--<li class="li3">
 								<h2>验证码</h2>
@@ -161,21 +165,28 @@
 						password: aInput[1].value
 					},
 					success: function(d) {
-						location.href = 'http://10.31.162.27:8087/lfjk/src/index.html';
-						addcookie('name', aInput[0].value, 7);
+						if(!d){
+							alert('用户名密码错误');
+							aInput[1].value='';
+						}else{
+							addcookie('name',aInput[0].value,7);
+							location.href='http://10.31.162.27:8087/lfjk/src/index.html';
+							
+						}
 					}
 
 				})
 			}
-		}();
+			}
+		();
 		
 		$(document).ready(function() {
 				$("#form1").validate({
 					success: function(succ, element) {
 						if(element.name == "username") {
-							succ.text("你的名字真好听").addClass("success");
+							succ.text("用户名格式正确").addClass("success");
 						} else if(element.name == "password") {
-							succ.text("你的密码真安全").addClass("success");
+							succ.text("你的密码格式正确").addClass("success");
 						} else {
 							succ.text("邮箱是正确的").addClass("success");
 						}

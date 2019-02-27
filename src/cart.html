@@ -3,10 +3,16 @@
 
 	<head>
 		<meta charset="UTF-8" />
+    <meta name="keywords" content="乐蜂网,乐蜂,化妆品网站,商品特卖,特卖网,特卖">
+    <meta name="description" content="乐蜂网全新开启美妆特卖，每天10点上新！主营化妆品、保健品、服装配饰等品类，放心购物，45天无条件退换货！同时还是国内一家拥有众多签约美容专家、明星达人并提供全面女性时尚解决方案的女性时尚生活互动网站。">
+		<link rel="icon" href="http://www.lefeng.com/favicon.ico" type="image/x-icon"//>
+		<title>乐蜂网-美妆特卖_每日10点上新_品牌甄选!</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 		<link rel="stylesheet" href="css/cart.css" />
 		<link rel="stylesheet" href="css/reset.css" />
+		<style>
+		</style>
 		<title>Document</title>
 	</head>
 
@@ -164,11 +170,11 @@
 						<ul id="totalPayPrice">
 							<li>
 								<label class="fl">
-								共<b>2</b>件商品  商品金额
+								共<b class="num1">0</b>件商品  商品金额
 							</label>
 								<span class="fr">
 								<span class="u-yen">¥</span>
-								<strong class="u-price">39</strong>
+								<strong class="u-price sum1">0</strong>
 								</span>
 							</li>
 						</ul>
@@ -182,7 +188,7 @@
 							</label>
 							<span class="fr">
 								<span class="u-yen">¥</span>
-							<strong class="u-price">39</strong>
+							<strong class="u-price sum1">0</strong>
 							</span>
 						</li>
 					</ul>
@@ -218,6 +224,7 @@
 							if(sid==value.sid){//比较当前传入sid跟数据比较
 								var clonegoodlist=$('.catr_list:hidden').clone(true,true);
 								clonegoodlist.find('.pic img').attr('src',value.url);
+								clonegoodlist.find('.pic img').attr('sid',value.sid);
 								clonegoodlist.find('.name a').html(value.title);
 								clonegoodlist.find('.td02 .u-price').html(value.price);
 								clonegoodlist.find('.td02 .mar_price').html(value.old_price);
@@ -225,13 +232,14 @@
 								clonegoodlist.find('.td03 input').val(num);
 								clonegoodlist.css('display','block');
 								$('.item-list').append(clonegoodlist);
+								calcprice();
 							}
 							console.log(value);
 						});
 					});
 
 				}
-				gooslist(1,2);
+				gooslist();
 				
 				//渲染商品列表
 				if(getcookie('cooksid') && getcookie('cookienum')) {
@@ -247,11 +255,110 @@
 				 function calcprice(){
 				 	var allprice=0;
 				 	var allcount=0;
+				 	$('.catr_list:visible').each(function(){
+				 		allprice+=parseFloat($(this).find('.td04 .u-price').html());
+				 		allcount+=parseInt($(this).find('.td03 input').val());
+				   
 				 	
+				 });
+				 $('.sum1').html(allprice);
+				 $('.num1').html(allcount);
 				 }
 				
+				//改变商品的数量
+				  $('.r-y').on('click',function(){
+				  var addvalue=$(this).parents('.catr_list').find('.td03 input').val();
+					addvalue++;
+					if(addvalue>99){
+						addvalue=99
+					}
+					$(this).parents('.catr_list').find('.td03 input').val(addvalue);
+					$(this).parents('.catr_list').find('.td04 .u-price').html(sumprice($(this)));
+				    calcprice();
+				    sumprice
+				    changecookie($(this));
+				  })
+				   $('.l-y').on('click',function(){
+				  var addvalue=$(this).parents('.catr_list').find('.td03 input').val();
+					addvalue--;
+					if(addvalue<=0){
+						addvalue=1
+					}
+					$(this).parents('.catr_list').find('.td03 input').val(addvalue);
+					$(this).parents('.catr_list').find('.td04 .u-price').html(sumprice($(this)));
+				    calcprice($(this));
+				    changecookie($(this));
+				   })
 				
-			})()
+				// 验证输入框
+				   $('.td03 input').on('input',function(){
+				   	var reg=/^\d+$/g;
+				   	if(reg.test($(this).val())){
+				   		var $value=$(this).val();
+				   		if($value>99){
+				   			$(this).val(99);
+				   		}else if($value<=0){
+				   			$(this).val(1);
+				   		}else{
+				   			$(this).val($value);
+				   		}
+				  }
+				   	else{
+				   		$(this).val(1);
+				   	}
+				   	sumprice($(this))
+				   	$(this).parents('.catr_list').find('.td04 .u-price').html(sumprice($(this)));
+				    calcprice();
+				    changecookie($(this));
+				   });
+				
+				//封装函数实现价格的计算
+				function  sumprice(obj){
+					var $singleprice=parseFloat(obj.parents('.catr_list').find('.td02 .u-price').html());
+				    var $addvalue=parseInt(obj.parents('.catr_list').find('.td03 input').val());
+				    return ($singleprice*$addvalue).toFixed(2);
+				}
+				
+				
+				//将改变的值存放在cookie
+				var sidarr=[];//编号
+				var numarr=[];//商品数量
+				function cookietoarray(){//取cookie转数组
+				if(getcookie('cooksid')&& getcookie('cookienum')){
+				sidarr=getcookie('cooksid').split(',');
+				numarr=getcookie('cookienum').split(',');
+				}
+				
+				}
+				//将改变的值存到cookie
+				//当前改变数量的商品列表找到对应的cookie里面的sid比较找到位置
+				function changecookie(obj){
+					cookietoarray();
+					var sid=obj.parents('.catr_list').find('img').attr('sid');
+					numarr[$.inArray(sid,sidarr)]=obj.parents('.catr_list').find('.td03 input').val();
+					addcookie('cookienum',numarr.toString(),7);
+					
+					
+				}
+				
+				//删除
+				$('.catr_list').on('click','.td05 a',function(){
+					if(window.confirm('你确定要删除嘛？？么么'))
+					$(this).parents('.catr_list').remove();
+					
+				})
+				
+				//删除cookie
+				function deletecookie(sid){
+				cookietoarray();
+				var $index=$.inArray(sid,sidarr);
+				console.log($index);
+				sidarr.splice($index,1);
+				numarr.splice($index,1);
+				addcookie('cooksid',sidarr.toString(),7);
+				addcookie('cookienum',numarr.toString(),7);
+			}
+			})();
 		</script>
 	</body>
 

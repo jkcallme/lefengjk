@@ -6,11 +6,12 @@
 	{
 		$user=$_POST['username'];
 		$pass=sha1($_POST['password']);
-		$result=mysql_query("select * from user where username='$user' and password='$pass' ");
+		$result=mysql_query("select * from user where username='$user' and password='$pass'");
 		if(mysql_fetch_array($result)){
 			echo true;//登陆成功
 		}else{
 			echo false;//登陆失败
 		}
+	
 	}
 ?>
