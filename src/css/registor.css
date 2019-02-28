@@ -138,6 +138,7 @@ a {
   box-shadow: #ccc 0px 0px 5px;
   background: #fff;
   margin-bottom: 60px;
+  top: -120px;
 }
 .login_form .wrap .form_content .form_content_title {
   height: auto;

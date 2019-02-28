@@ -43,34 +43,6 @@
 		$('.caidan3').hide();
 		$(this).css('background', '#f7f7f7')
 	})
-//	$('.class-more-tips').hover(function() {
-//		$('#webf3').show();
-//		$('#webf4').show();
-//	}, function() {
-//		$(this).show();
-//	})
-//	$('#webf3').hover(function() {
-//		$(this).css('background', '#fff')
-//		$('.caidan4').show();
-//	}, function() {
-//		$('.caidan4').hide();
-//		$(this).css('background', '#f7f7f7')
-//	})
-//	$('#webf3').on('mouseleave', function() {
-//		$(this).hide();
-//		$('.class-more-tips').show();
-//		$('#webf4').hide();
-//	})
-//	$('#webf4').hover(function() {
-//		$(this).css('background', '#fff')
-//		$('.caidan5').show();
-//	}, function() {
-//		$('.caidan5').hide();
-//		$(this).css('background', '#f7f7f7')
-//	})
-//	$('#webf4').on('mouseleave', function() {
-//		$(this).hide();
-//		$('.class-more-tips').show();
-//	});
+//	
 
 })()

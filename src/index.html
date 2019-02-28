@@ -125,13 +125,13 @@
 
 							<ul class="first_right">
 								<li>
-									<a href="#" class="huanyin"><span class="user"></span>欢迎来到乐蜂，请&nbsp;</a>
+									<a href="#" class="huanyin"><span class="user"></span>&nbsp;&nbsp; &nbsp;欢迎来到乐蜂&nbsp;！</a>
 									<a href="login.html" class="f10 login1">登录</a>
 
 								</li>
 								<li><span>|</span></li>
 								<li>
-									<a href="registor.html" class="f10">免费注册</a>
+									<a href="registor.html" class="f10 registor1">免费注册</a>
 								</li>
 								<li class="my_dd">
 									<a href="#" class="bot_left">我的订单
@@ -198,7 +198,7 @@
 				<div class="search">
 					<div class="search_input">
 						<strong>搜索</strong>
-						<input type="text" />
+						<input type="text" class="text_search" />
 						<p>热门&nbsp;:
 							<a href="#">黎姿</a>
 							<a href="#">欧莱雅葡萄籽</a>
@@ -206,6 +206,11 @@
 							<a href="#">洁面</a>
 							<a href="#">口红</a>
 						</p>
+					</div>
+					<div class="search_list" style="display: none;">
+						<ul>
+                            <li></li>
+						</ul>
 					</div>
 				</div>
 				<!--购物车部分-->
@@ -862,7 +867,7 @@
 			</h3>
 		</div>
 		<!--页面主题3-->
-		<div class="section_3 louceng">
+		<div class="section_3 louceng2">
 
 		</div>
 		<!--页面主题4-->
@@ -974,16 +979,18 @@
 		<script type="text/javascript" src="script/js/index.js"></script>
 		<script type="text/javascript" src="script/thirdplugins/cookie.js"></script>
 		<script>
-			//获取数据
-			$.ajax({
-				url: 'http://10.31.162.27:8087/lfjk/php/lefeng.php',
-				dataType: 'json'
-			}).done(function(data) {
+			//获取上面数据  数据库渲染------------------------------------------------------
+			
+			;(function() {
+				$.ajax({
+					url: 'http://10.31.162.27:8087/lfjk/php/lefeng.php',
+					dataType: 'json'
+				}).done(function(data) {
 
-				var $strhtml = '';
-				$.each(data, function(index, value) {
+					var $strhtml = '';
+					$.each(data, function(index, value) {
 
-					$strhtml += `
+						$strhtml += `
 					<div class="box_item2" >
 					<dl>
 						<dt class='lazy_top'>
@@ -999,25 +1006,29 @@
           				</dd>
           				</dl></div>
 					`;
-				});
-
-				$('.section_5').html($strhtml);
-				//懒加载
-				$(function() {
-					$("img.lazy").lazyload({
-						effect: "fadeIn"
 					});
-				});
-			});
 
-			$.ajax({
-				url: 'http://10.31.162.27:8087/lfjk/php/lfshop.php',
-				dataType: 'json'
-			}).done(function(data) {
+					$('.section_5').html($strhtml);
+					//懒加载上面数据的图片 --------------------------------------------------------------
+					$(function() {
+						$("img.lazy").lazyload({
+							effect: "fadeIn"
+						});
+					});
+				})
+			})();
 
-				var $strhtmlbot = '';
-				$.each(data, function(index, value) {
-					$strhtmlbot += `
+			//获取下面数据  数据库渲染------------------------------------------------------
+			
+			;(function() {
+				$.ajax({
+					url: 'http://10.31.162.27:8087/lfjk/php/lfshop.php',
+					dataType: 'json'
+				}).done(function(data) {
+
+					var $strhtmlbot = '';
+					$.each(data, function(index, value) {
+						$strhtmlbot += `
 				<div class="box_item">
 				<a href="details.html?sid=${value.sid}">
 				<img class="lazy" data-original="${value.boturl}"></a>
@@ -1027,20 +1038,20 @@
 				</p>
 			</div>
 					`;
-				});
-
-				$('.section_3').html($strhtmlbot);
-				//懒加载
-				$(function() {
-					$("img.lazy").lazyload({
-						effect: "fadeIn"
 					});
-				});
-			});
 
-			//轮播图
-			;
-			(function() {
+					$('.section_3').html($strhtmlbot);
+					//懒加载下面数据的图片 -------------------------------------
+					$(function() {
+						$("img.lazy").lazyload({
+							effect: "fadeIn"
+						});
+					});
+				})
+			})();
+			//顶部的轮播图展示-----------------------------------------------
+			
+			;(function() {
 				var $box = $('#banner');
 				var $btns = $('#banner ol li');
 				var $pics = $('#banner ul li');
@@ -1093,7 +1104,7 @@
 					$right.click();
 				}, 3000);
 
-				//楼梯
+				//楼梯----------------------------------------------
 
 				$(window).on('scroll', function() {
 					var $top = $(window).scrollTop();
@@ -1104,14 +1115,27 @@
 						$louti.hide();
 					}
 				});
-
-				$('.section_7 span').on('click', function() {
-					var $top = $('.louceng').eq($(this).index()).offset().top;
+			    
+			   
+				$('.section_7 .menu_left-2').on('click', function() {
+					var $top = $('.louceng').offset().top-300;
+					$('html,body').animate({ //这里给滚动条赋值，兼容写法
+						scrollTop: $top
+					});
+					
+				});
+				
+				$('.section_7 .menu_left-1').on('click', function() {
+					var $top = $('.louceng2').offset().top-300;
 					$('html,body').animate({ //这里给滚动条赋值，兼容写法
 						scrollTop: $top
 					});
 				});
-
+//
+			
+			    
+				
+				
 				$('.scrolled').on('click', function() {
 					$('html,body').animate({
 						scrollTop: 0
@@ -1120,19 +1144,66 @@
 				})
 			})();
 
-			//判断Cookie
-			var oSpan = document.querySelector('.user');
-			var login = document.querySelector('.login1')
-			if(getcookie('name')) {
-				oSpan.innerHTML = getcookie('name');
-				login.innerHTML = '退出';
-			}
-			login.onclick = function() {
-				delcookie('name');
-				oSpan.style.display = 'none';
-				login.innerHTML = '登录';
+			//判断Cookie-------------------------------------------------------
+			
+			;(function() {
+				var oSpan = document.querySelector('.user');
+				var login = document.querySelector('.login1');
+				var registor = document.querySelector('.registor1');
+				if(getcookie('name')) {
+					oSpan.innerHTML = getcookie('name');
+					oSpan.style.color = '#F52648';
+					login.style.display = 'none';
+					registor.innerHTML = '退出'
+				}
+				registor.onclick = function() {
+					delcookie('name');
+					oSpan.style.display = 'none';
+					registor.innerHTML = '立即注册';
+					login.innerHTML = '登录';
 
-			}
+				}
+			})();
+			//搜索框下拉菜单-----------------------------------------------------
+			
+			;(function() {
+				$('.text_search').on('focus', function() {
+					$(this).val('');
+				})
+				$('.text_search').on('input', function() {
+					var that = $(this);
+					$('.search_list').css('display', 'block');
+					var $str = '';
+					$.ajax({
+						type: "get",
+						url: "https://suggest.taobao.com/sug?code=utf-8&q=" + $(this).val() + "&_ksTS=1548331259728_369&callback=baidu",
+						async: true,
+						dataType: 'jsonp',
+						success: function(data) {
+							$.each(data, function(index, element) {
+								$.each(element, function(indexs, aa) {
+									$str += `<li>${aa[0]}</li>`;
+								});
+							});
+							if(that.val() == '') {
+								$('.search_list').hide();
+							} else {
+								$('.search_list ul').html($str);
+							}
+							$('.search_list ul li').each(function() {
+								$(this).on('click', function() {
+									that.val($(this).html());
+									$('.search_list').css('display', 'none');
+								})
+							});
+							$('body').on('click', function() {
+								$('.search_list').css('display', 'none');
+							})
+
+						}
+					});
+				})
+			})();
 		</script>
 	</body>
 

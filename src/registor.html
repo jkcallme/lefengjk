@@ -65,7 +65,7 @@
 					<div class="form_content">
 						<div class="form_content_title">
 							<span class="lc1"></span>
-							<span class="lc2"><a href="#">登录</a></span>
+							<span class="lc2"><a href="login.html">登录</a></span>
 						</div>
 						<ul class="form_content_input">
 							<li class="list1">
@@ -73,7 +73,7 @@
 								<input type="text" name="tel" id="tel" style="width: 200px;" />
 								<div class="yz_dibu" style="color: #999;">请输入手机号</div>
 							</li>
-							<!--<li class="list2">
+							<li class="list2">
 								<h2>验证码</h2>
 								<input type="text" name="yzm" />
 								<span><a href="#">
@@ -82,15 +82,15 @@
 								<a href="#">看不清?<br>换一张</a>
 								</span>
 								<div class="yz_dibu" style="color: #999;">请输入图形验证码</div>
-							</li>-->
-							<!--<li class="list3">
+							</li>
+							<li class="list3">
 								<h2>短信验证码</h2>
 								<input type="text" class="yzm" name="dxyzm" />
 								<span>
 									<input type="button" value="获取短信验证码" />
 								</span>
 								<div class="yz_dibu" style="color: #999;">验证码已发送</div>
-							</li>-->
+							</li>
 							<li class="list4">
 								<h2>账号</h2>
 								<input type="text" name="username" id="username" style="width: 200px;" />
@@ -108,7 +108,7 @@
 							</li>
 
 							<li class="list5">
-								<input type="submit" name="submit" id="submit" value="登录协议并注册" style="background:#eb203e ; border: none; color: #fff; cursor: pointer;" />
+								<a><input type="submit" name="submit" id="submit" value="登录协议并注册" style="background:#eb203e ; border: none; color: #fff; cursor: pointer;" /></a>
 							</li>
 							<li class="list6">
 								<a href="#">《乐蜂网用户协议》 </a>
@@ -211,7 +211,7 @@
 			$.validator.setDefaults({
 				//添加校验成功后的执行函数--修改提示内容，并为正确提示信息添加新的样式(默认是valid)
 				success: function(input) {
-					input.append('<img src="signed-right-icon.png">');
+					input.append('<img src="img/signed-right-icon.png">');
 				}
 
 			});

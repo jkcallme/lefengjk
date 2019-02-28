@@ -12,6 +12,5 @@
 		}else{
 			echo false;//登陆失败
 		}
-	
 	}
 ?>

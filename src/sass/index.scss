@@ -37,8 +37,9 @@ a {
     width: $tbg-width;
     height: $tbg-height;
     .top_main {
-        background: url(../img/bg4.jpg) no-repeat;
-        width: $tbg-width;
+        background: url(../img/bg4.jpg) no-repeat center;
+        width: 100%;
+        margin: 0 auto;
         height: 67px;
     }
     .bot_main {
@@ -56,7 +57,7 @@ a {
         }
         .first_right {
             float: right;
-            margin-left: 250px;
+            margin-left: 160px;
             li {
                 float: left;
             }
@@ -288,6 +289,34 @@ header {
         height: 58px;
         margin: 31px 0 0 300px;
         float: left;
+        .search_list{
+            float: none;
+            top: 76px;
+            height: auto;
+            width: 327px!important;
+            color: #666;
+            border: 1px solid rgb(222, 212, 213);
+            position: absolute;
+            z-index: 9999;
+            padding: 5px 0px;
+            background: rgb(255, 255, 255);
+            border-top: none;
+            ul{
+               background: #fff;
+               border: none;
+               width: 327px;
+               padding: 0;
+               float: left;
+               overflow: hidden;
+               line-height: 28px;
+               color: rgb(102, 102, 102);
+               cursor: pointer;
+               overflow: hidden; 
+               li{
+                   padding: 2px 6px;
+               }
+            }
+        }
         .search_input {
             background: url(../img/jnt2.png) no-repeat 0 -443px;
             margin-top: 5px;
@@ -380,8 +409,9 @@ header {
 /*导航start---------------------------------------------------*/
 
 .nav {
+    width: 100%;
     overflow: hidden;
-    background: url(../img/nav.png) repeat-x bottom #fff;
+    background: url(../img/nav.png) repeat-x bottom center #fff;
     .wrapper .menu_btn {
         width: 220px;
         height: 40px;

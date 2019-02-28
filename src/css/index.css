@@ -27,8 +27,9 @@ a {
   height: 100px;
 }
 .top .top_main {
-  background: url(../img/bg4.jpg) no-repeat;
+  background: url(../img/bg4.jpg) no-repeat center;
   width: 100%;
+  margin: 0 auto;
   height: 67px;
 }
 .top .bot_main {
@@ -47,7 +48,7 @@ a {
 }
 .top .wrapper .first_right {
   float: right;
-  margin-left: 250px;
+  margin-left: 160px;
 }
 .top .wrapper .first_right li {
   float: left;
@@ -76,7 +77,7 @@ a {
   left: 6px;
   top: -1px;
   min-width: 117px;
-  z-index: 199;
+  z-index: 1001;
 }
 .first_left .areaSell ul {
   width: 311px;
@@ -273,6 +274,34 @@ header {
   margin: 31px 0 0 300px;
   float: left;
 }
+.header .search .search_list {
+  float: none;
+  top: 76px;
+  height: auto;
+  width: 327px !important;
+  color: #666;
+  border: 1px solid #ded4d5;
+  position: absolute;
+  z-index: 9999;
+  padding: 5px 0px;
+  background: white;
+  border-top: none;
+}
+.header .search .search_list ul {
+  background: #fff;
+  border: none;
+  width: 327px;
+  padding: 0;
+  float: left;
+  overflow: hidden;
+  line-height: 28px;
+  color: #666666;
+  cursor: pointer;
+  overflow: hidden;
+}
+.header .search .search_list ul li {
+  padding: 2px 6px;
+}
 .header .search .search_input {
   background: url(../img/jnt2.png) no-repeat 0 -443px;
   margin-top: 5px;
@@ -359,8 +388,9 @@ header {
 /*头部end---------------------------------------------------*/
 /*导航start---------------------------------------------------*/
 .nav {
+  width: 100%;
   overflow: hidden;
-  background: url(../img/nav.png) repeat-x bottom #fff;
+  background: url(../img/nav.png) repeat-x bottom center #fff;
 }
 .nav .wrapper .menu_btn {
   width: 220px;
